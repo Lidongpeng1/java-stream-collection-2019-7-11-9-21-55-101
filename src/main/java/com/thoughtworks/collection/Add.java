@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Add {
@@ -46,7 +47,14 @@ public class Add {
 //    }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> sortedList = arrayList.stream().sorted().collect(Collectors.toList());
+        double median;
+        if (sortedList.size() % 2 == 0) {
+            median = (sortedList.get(sortedList.size() / 2 - 1) + sortedList.get(sortedList.size() / 2)) / 2;
+        } else {
+            median = sortedList.get(sortedList.size() / 2);
+        }
+        return median;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
