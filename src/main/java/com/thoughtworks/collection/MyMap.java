@@ -30,7 +30,13 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        if (num < 0) {
+            return "";
+        } else if (num < 26) {
+            return letters[num];
+        } else {
+            return getLetters(num / 26 - 1) + getLetters(num % 26);
+        }
     }
 
     public List<Integer> sortFromSmall() {
