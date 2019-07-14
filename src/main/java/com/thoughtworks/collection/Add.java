@@ -14,7 +14,10 @@ public class Add {
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        int low = leftBorder < rightBorder ? leftBorder : rightBorder;
+        int high = leftBorder > rightBorder ? leftBorder : rightBorder;
+        int sum = IntStream.rangeClosed(low, high).filter(num -> num % 2 == 1).sum();
+        return sum;
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
