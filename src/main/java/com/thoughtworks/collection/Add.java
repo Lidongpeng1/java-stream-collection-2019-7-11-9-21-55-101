@@ -21,7 +21,8 @@ public class Add {
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        int sum = arrayList.stream().mapToInt(temp -> temp * 3 + 2).sum();
+        return sum;
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
