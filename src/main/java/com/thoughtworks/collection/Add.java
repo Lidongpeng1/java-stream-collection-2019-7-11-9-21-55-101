@@ -26,7 +26,8 @@ public class Add {
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> list = arrayList.stream().mapToInt(temp -> temp = temp % 2 != 0 ? temp * 3 + 2 : temp).boxed().collect(Collectors.toList());
+        return list;
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
