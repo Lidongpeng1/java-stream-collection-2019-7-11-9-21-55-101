@@ -26,7 +26,7 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        return array.stream().map(num -> getLetters(num - 1)).collect(Collectors.toList());
     }
 
     public List<Integer> sortFromBig() {
